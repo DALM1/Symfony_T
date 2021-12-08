@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Dtb{% endblock %}
+
+{% block body %}
+    <h1>Create new Dtb</h1>
+
+    {{ include('dtb/_form.html.twig') }}
+
+    <a href="{{ path('dtb_index') }}">back to list</a>
+{% endblock %}

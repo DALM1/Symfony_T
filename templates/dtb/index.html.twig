@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dtb index{% endblock %}
+
+{% block body %}
+    <h1>Dtb index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for dtb in dtbs %}
+            <tr>
+                <td>{{ dtb.id }}</td>
+                <td>
+                    <a href="{{ path('dtb_show', {'id': dtb.id}) }}">show</a>
+                    <a href="{{ path('dtb_edit', {'id': dtb.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="2">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('dtb_new') }}">Create new</a>
+{% endblock %}
